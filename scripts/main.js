@@ -345,10 +345,10 @@ class VSpellPointsCalcs {
         let casterTypeNr = this.transformCasterType(casterType)
         switch (casterTypeNr) {
             case this.NONE: return 0;
-            case this.THIRD: return Math.floor(classLevel / 3);
-            case this.HALF: return Math.floor(classLevel / 2);
+            case this.THIRD: return Math.ceil(classLevel / 3);
+            case this.HALF: return Math.ceil(classLevel / 2);
             case this.FULL: return classLevel;
-            case this.ART: return Math.max(1, Math.floor(classLevel / 2)); // Artificers are half caster spellslots on lvl 1
+            case this.ART: return Math.max(1, Math.ceil(classLevel / 2)); // Artificers are half caster spellslots on lvl 1
             default: return 0;
         }
     }
